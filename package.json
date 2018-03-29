@@ -1,0 +1,33 @@
+{
+  "name": "sonoff-proxy",
+  "version": "1.0.0",
+  "description": "A simple proxy and pairing tool to setup your Sonoff Switch on your home network",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "node-wifi": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k2r79/sonoff-proxy.git"
+  },
+  "keywords": [
+    "sonoff",
+    "switch",
+    "home",
+    "automation",
+    "domotique",
+    "proxy",
+    "iot"
+  ],
+  "author": "Vincent Kelleher <vincent.kelleher@hotmail.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k2r79/sonoff-proxy/issues"
+  },
+  "homepage": "https://github.com/k2r79/sonoff-proxy#readme"
+}
