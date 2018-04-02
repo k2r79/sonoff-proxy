@@ -37,7 +37,7 @@ function checkArguments() {
         NETWORK_SSID = process.argv[2];
         NETWORK_PASSWORD = process.argv[3];
         HTTPS_SERVER_IP = process.argv[4];
-        HTTPS_SERVER_PORT = process.argv[5];
+        HTTPS_SERVER_PORT = parseInt(process.argv[5]);
     }
 }
 
@@ -56,7 +56,7 @@ function findSwitchNetwork(resolve) {
             let network = networks.filter(n => n.ssid.startsWith('ITEAD-'))[0];
 
             if (!network) {
-                findSwitchNetwork(wifi, resolve);
+                findSwitchNetwork(resolve);
             } else {
                 resolve(network);
             }
@@ -117,7 +117,11 @@ function setupSwitch() {
                 port: HTTPS_SERVER_PORT
             })
             .then(response => {
-                console.log('Switch setup correctly.');
+                if (!response.data.error) {
+                    console.log('Switch setup correctly.');
+                } else {
+                    console.log('An error occured during switch setup.');
+                }
 
                 resolve(true);
             })
